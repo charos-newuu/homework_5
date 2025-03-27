@@ -1,10 +1,8 @@
 #include "MyStack.h"
 
-// Constructor
 template <typename T>
 MyStack<T>::MyStack() : head(nullptr) {}
 
-// Destructor: Delete all nodes
 template <typename T>
 MyStack<T>::~MyStack() {
     while (!empty()) {
@@ -12,13 +10,11 @@ MyStack<T>::~MyStack() {
     }
 }
 
-// Check if stack is empty
 template <typename T>
 bool MyStack<T>::empty() const {
     return head == nullptr;
 }
 
-// Get top element without removing it
 template <typename T>
 T MyStack<T>::top() const {
     if (empty()) {
@@ -27,7 +23,7 @@ T MyStack<T>::top() const {
     return head->value;
 }
 
-// Remove top element
+
 template <typename T>
 void MyStack<T>::pop() {
     if (empty()) {
@@ -38,7 +34,6 @@ void MyStack<T>::pop() {
     delete temp;  // Free memory
 }
 
-// Push new element onto stack
 template <typename T>
 void MyStack<T>::push(T value) {
     MyListNode* newNode = new MyListNode(value);
